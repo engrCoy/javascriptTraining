@@ -19,6 +19,7 @@ let pascal = function (size) {
         prev = curr;
         // console.log(curr);
         
+        
     }
     
     return pascalT;
