@@ -54,8 +54,44 @@
 
 
 //try recursion with spread operator with max, and min
-function countdown(max, min) {
-     return max <= min ? [min]:[max, ...countdown(max-1, min)];
-}
+// function countdown(max, min) {
+//      return max <= min ? [min]:[max, ...countdown(max-1, min)];
+// }
+// console.log(countdown(10,5));
 
-console.log(countdown(10,5));
+
+//create sample objects for practice on property manipulation;
+
+let myInformation = {
+    name: "Nicolas Sebastian R. Mendoza",
+    address: "Capas, Tarlac",
+    hobbies: ["programming", "music", "watching movies"],
+    age: 25,
+    birthday: '06/19/1996',
+    pets: [{
+            petName: "Suri",
+            type: "dog",
+            breed: "Shih-Tzu",
+            food: ["chicken liver","chicken adobo","dog food"]
+        },
+        {
+            petName: "Sid",
+            type: "dog",
+            breed: "Belgian Malinois",
+            food: ["corned-beef","dog food"]
+        },
+        {
+            petName: "Link",
+            type: "cat",
+            breed: "Persian",
+            food: ["cat food"]
+        },
+        {
+            petName: "Euruce",
+            type: "cat",
+            breed: "Puskal",
+            food: ["cat food"]
+        }
+        
+    ]
+}
