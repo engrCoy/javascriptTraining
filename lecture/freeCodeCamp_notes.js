@@ -159,24 +159,43 @@
 //   console.log(novel.author);
 //   console.log(novel._author);
 
-  class Names {
-      constructor(firstName, lastName) {
-          this._firstName = firstName;
-          this._lastName = lastName;
-      }
-      get givenName() {
-          return `${this._firstName} ${this._lastName} is my Name`
-      }
-      set changeName(name) {
-          this._firstName = name.split(' ')[0];
-          this._lastName = name.split(' ')[1]
-      }
-  }
+//   class Names {
+//       constructor(firstName, lastName) {
+//           this._firstName = firstName;
+//           this._lastName = lastName;
+//       }
+//       get givenName() {
+//           return `${this._firstName} ${this._lastName} is my Name`
+//       }
+//       set changeName(name) {
+//           this._firstName = name.split(' ')[0];
+//           this._lastName = name.split(' ')[1]
+//       }
+//   }
 
-  const newName = new Names('Nicolas','Mendoza');
-  console.log(newName);
-  let wholeName = newName.givenName;
-  console.log(wholeName);
-  newName.changeName = "Dolores Mendoza";
-  console.log(newName.givenName);
+//   const newName = new Names('Nicolas','Mendoza');
+//   console.log(newName);
+//   let wholeName = newName.givenName;
+//   console.log(wholeName);
+//   newName.changeName = "Dolores Mendoza";
+//   console.log(newName.givenName);
+
+
+
+let p = new Promise((resolve,reject) => {
+    let a = 1+1;
+    if(a == 2) {
+        resolve("success")
+    } else {
+        reject("fail")
+    }
+
+});
+
+p.then((message) => {
+    console.log("This is in the then " + message)
+}).catch((message) => {
+    console.log("This is in the catch " + message)
+});
+
 
