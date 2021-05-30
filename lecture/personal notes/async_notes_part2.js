@@ -9,7 +9,6 @@ const promise = new Promise((resolve, reject) => {
 promise.then(user => {
     console.log(user);
 })
-.catch(errorMessage =>{
-    console.log(errorMessage.message);
-    console.log(errorMessage)}
-    );
+.catch(errorMessage =>
+    console.log(errorMessage.message)
+);
