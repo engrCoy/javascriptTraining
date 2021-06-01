@@ -70,7 +70,7 @@ function loginUser(email, password) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log("Now we have the data");
-            resolve({userEmail: email});
+            reject({userEmail: email});
         },5000)
     }); 
 }
