@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Meme Soundboard</title>
+    </head>
+    <header>
+        <h1>The map of the keys are from <strong>1-5</strong> to trigger the soundboard.</h1>
+    </header>
+    <body>
+        <div class = "board-buttons">
+            <div data-key = "49" class = "board-button">
+                <kbd>JUST</kbd>
+                <span class = "sound-desc">Do it!</span>
+            </div>
+            <div data-key = "50" class = "board-button">
+                <kbd>GOTCHA</kbd>
+                <span class = "sound-desc">B*tch!</span>
+            </div>
+            <div data-key = "51" class = "board-button">
+                <kbd>THEY'RE</kbd>
+                <span class = "sound-desc">watching!</span>
+            </div>
+            <div data-key = "52" class = "board-button">
+                <kbd>AMAZING</kbd>
+                <span class = "sound-desc">tadaaaa!</span>
+            </div>
+            <div data-key = "53" class = "board-button">
+                <kbd>WASTED</kbd>
+                <span class = "sound-desc">Play Again?</span>
+            </div>
+
+        </div>
+        
+        
+
+        <audio data-key = "49" src="./sounds/doit.mp3"></audio>
+        <audio data-key = "50" src="./sounds/gotcha.mp3"></audio>
+        <audio data-key = "51" src="./sounds/illuminati.mp3"></audio>
+        <audio data-key = "52" src="./sounds/tada.mp3"></audio>
+        <audio data-key = "53" src="./sounds/wasted.mp3"></audio>
+
+
+        <script>
+            function playSound(press) {
+                const audio = document.querySelector(`audio[data-key = "${press.keyCode}"]`)
+                const boardClass = document.querySelector(`.board-button[data-key = "${press.keyCode}"]`)
+                if(!audio) return;//stops the function from running
+                audio.currentTime = 0;
+                audio.play();
+                boardClass.classList.add('playing');
+            }
+            function removeTransition(press) {
+                if (press.propertyName != 'transform') return;
+                this.classList.remove('playing');
+                // console.log(press.propertyName);
+            }
+            // window.addEventListener('keydown',(press)=> {console.log(press.keyCode);}) //keyCode tester;
+            window.addEventListener('keydown',playSound);
+            const boardButtons = document.querySelectorAll('.board-button');
+            boardButtons.forEach(boardClass => boardClass.addEventListener('transitionend',removeTransition))
+
+        </script>
+
+    </body>
+</html>
+
